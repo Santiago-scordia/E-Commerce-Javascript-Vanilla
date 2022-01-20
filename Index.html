@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>PC COMPONENTES</title>
+</head>
+<body>
+    <section class="navbar-section">
+        <div class="navbar-section-container">
+                <a href="#start" class="navbar-title">PC COMPONENTES</a>
+                    <img src="assets/computer.png" class="navbar-logo" alt="pc">
+    </section>
+    <section class="card-section">
+        <div class="card">
+            <h3 class="card-title"></h3>
+                <img src="assets/ryzen3.png" class="card-img" alt="pc">
+                <p class="card-price"></p>
+                <button onclick="sumarcarrito(0)" class="card-button">Añadir al carrito</button>
+                    
+        </div>
+        <div class="card">
+            <h3 class="card-title"></h3>
+                <img src="assets/ryzen5.png" class="card-img" alt="pc">
+                <p class="card-price"></p>
+                <button onclick="sumarcarrito(1)" class="card-button">Añadir al carrito</button>
+        </div>
+        <div class="card">
+            <h3 class="card-title"></h3>
+                <img src="assets/ryzen7.png" class="card-img" alt="pc">
+                <p class="card-price"></p>
+                <button onclick="sumarcarrito(2)" class="card-button">Añadir al carrito</button>
+        </div>
+        <div class="card">
+            <h3 class="card-title"></h3>
+                <img src="assets/inteli5.png" class="card-img" alt="pc">
+                <p class="card-price"></p>
+                <button onclick="sumarcarrito(3)" class="card-button">Añadir al carrito</button>
+        </div>
+        <div class="card">
+            <h3 class="card-title"></h3>
+                <img src="assets/inteli7.png" class="card-img" alt="pc"> 
+                <p  class="card-price"></p>   
+                <button onclick="sumarcarrito(4)" class="card-button">Añadir al carrito</button>
+        </div>
+    </section>
+    <section class="carrito-section">
+        <div class="card-carrito-items">
+            <h3 class="text-carrito-items">Carrito: </h3>
+            <p class="text-items">lore</p>   
+        </div>
+        <div class="card-carrito">
+            <h3 class="text-carrito">Total: </h3>
+            <p class="text-total"></p> 
+        </div>  
+        <img onclick="vaciarCarrito()" class= "carrito-img" src="assets/bin.png" alt="">
+    </section>
+    <script src="js/index.js"></script>
+</body>
+</html>

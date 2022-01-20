@@ -14,7 +14,10 @@ const procesador4 = new procesador("Intel i7",67250);
 
 
 let listaProcesadores = [procesador0,procesador1,procesador2,procesador3,procesador4];
+
 let i=0;
+let n=0;
+
 
 for(const proce of listaProcesadores){
         document.getElementsByClassName("card-title")[i].innerHTML = proce.modelo;
@@ -25,11 +28,12 @@ for(const proce of listaProcesadores){
 let totalCarrito = 0;
 let modelos = [];
 
-document.getElementsByClassName("text-total")[0].innerHTML = "$"+totalCarrito;
+
+document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
 
 function actualizarCarrito(){
-    document.getElementsByClassName("text-total")[0].innerHTML = "$"+totalCarrito;
-    document.getElementsByClassName("text-items")[0].innerHTML = modelos.join(" - ");
+    document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
+    document.getElementsByClassName("name-items")[0].innerHTML = modelos.join(" - ");
 
 }
     
@@ -45,6 +49,7 @@ function vaciarCarrito(){
     totalCarrito=0;
     actualizarCarrito();   
 }
+
 
 
 

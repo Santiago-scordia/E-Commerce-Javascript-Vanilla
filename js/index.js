@@ -16,8 +16,6 @@ const procesador4 = new procesador("Intel i7",67250);
 let listaProcesadores = [procesador0,procesador1,procesador2,procesador3,procesador4];
 
 let i=0;
-let n=0;
-
 
 for(const proce of listaProcesadores){
         document.getElementsByClassName("card-title")[i].innerHTML = proce.modelo;
@@ -25,16 +23,24 @@ for(const proce of listaProcesadores){
         i++;
 }
 
-let totalCarrito = 0;
+
+if(localStorage.getItem("total-name") === null){
+    localStorage.setItem("total-name", 0);
+}
+
+
+let totalCarrito = parseInt(localStorage.getItem("total-name"));
 let modelos = [];
+modelos.push(localStorage.getItem("total-modelos"));
 
-
-document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
+document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-name");
+document.getElementsByClassName("name-items")[0].innerHTML = localStorage.getItem("total-modelos");
 
 function actualizarCarrito(){
+    localStorage.setItem("total-name", totalCarrito);
+    localStorage.setItem("total-modelos", modelos.join(" - "));
     document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
     document.getElementsByClassName("name-items")[0].innerHTML = modelos.join(" - ");
-
 }
     
 function sumarcarrito(num){
@@ -47,6 +53,8 @@ function sumarcarrito(num){
 function vaciarCarrito(){
     modelos = [];
     totalCarrito=0;
+    localStorage.setItem("total-name", totalCarrito);
+    localStorage.setItem("total-modelos", modelos.join(" - "));
     actualizarCarrito();   
 }
 

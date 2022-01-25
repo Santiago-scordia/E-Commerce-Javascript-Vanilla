@@ -21,6 +21,29 @@ body {
 
 /* MENU */
 
+.navbar__menu {
+    font-size: 23px;
+}
+
+.navbar__menu-list {
+    list-style: none;
+    display: flex;  
+}
+
+.navbar__menu-icon {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.navbar__menu-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    margin-left: 40px;
+}
+
 .navbar-section {
     background-color: #363434;
     width: 100%;
@@ -28,12 +51,12 @@ body {
     height: 80px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
-    padding: 25px;
     z-index: 10;
+    position: relative;
 }
 
 .navbar-section-container {
-    max-width: 1024px;
+    max-width: 70%;
     display: flex;
     flex-direction: row;
     height: 43px;
@@ -45,13 +68,8 @@ body {
     text-decoration: none;
     text-align: left;
     font-size: 25px;
-}
-
-.navbar-logo {
-    float: right;
-    position: relative;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    padding: 25px;
+    
 }
 
 /* CARDS */

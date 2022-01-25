@@ -64,7 +64,7 @@ body {
 
 .card {
     display: inline-block;
-    box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
+    box-shadow: 0px 10px 10px 0px rgba(243, 121, 7, 0.1);
     background-color: white;
     border-radius: 16px;
     margin: 12px;
@@ -78,15 +78,30 @@ body {
 }
 
 .card-button {
-    margin-left: 10px;
-    border-radius: 8px;
+	box-shadow: 0px 10px 6px -7px #000000;
+	background:linear-gradient(to bottom, #f78e06 5%, #d8260f 100%);
+	background-color:#df7016;
+	border-radius:9px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:8px 30px;
+	text-decoration:none;
+	text-shadow:1px 0px 2px #da7212;
+    margin-left: 70px;
+    margin-bottom: 20px;
 }
-
 .card-button:hover {
-    box-shadow: 0 8px 16px 0 rgba(255, 166, 0, 0.2);
-    background-color: orange;
-  }
-
+	background:linear-gradient(to bottom, #d8260f 5%, #f78e06 100%);
+	background-color:#408c99;
+}
+.card-button:active {
+	position:relative;
+	top:5px;
+}
 .card-img {
     width: auto;
     height: 50%;
@@ -95,9 +110,10 @@ body {
 }
 
 .card-price {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
     font-family: 'Trebuchet MS';
+    font-weight: bold;
 }
 
 /* CARRITO */
@@ -161,12 +177,13 @@ body {
 }
 
 
-.carrito-img {
-    display: inline-block;
-    position: absolute;
+.carrito-img { 
     width: 40px;
     height: 40px;
     margin-top: 25px;
+    margin-bottom: 200px;
 }
+
+
 
 

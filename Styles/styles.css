@@ -22,7 +22,7 @@ body {
 /* MENU */
 
 .navbar__menu {
-    font-size: 23px;
+    font-size: 10px;
 }
 
 .navbar__menu-list {
@@ -88,7 +88,7 @@ body {
     margin: 12px;
     width: 300px;
     height: 350px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .card-title{

@@ -51,17 +51,15 @@ listaProductos.sort(function (a, b){
 
 let i = 0;
 
-//Se crean las cards
+//Se crean las cards con jquery
 for(const produ of listaProductos){
     produ.id = i++;
-    let contenedor = document.createElement("div");
-    contenedor.classList.add('card');
-    contenedor.innerHTML= ` 
+    $(`#${produ.tipo}`).append( ` <div>
                             <h3 class="card-title"> ${produ.modelo}</h3>
                             <img src=${produ.imagen} class="card-img" alt="pc">
                             <p class="card-price"> $${produ.precio}</p>
-                            <button onclick="sumarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>`;              
-     document.getElementById(produ.tipo).appendChild(contenedor);
+                            <button onclick="sumarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>
+                            </div>`).find('div:last').addClass('card');     
 }
 
 if(localStorage.getItem("total-name") === null){

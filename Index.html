@@ -10,39 +10,23 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <section class="navbar-section">
-        <div class="navbar-section-container">
-                <a href="#proces" class="navbar-title">PC COMPONENTES</a>
-        <nav class="navbar__menu">
-                <ul class="navbar__menu-list">
-                    <li class="navbar__menu-list-item">
-                        <a href="#proces" class="navbar__menu-link">
-                            <img class="navbar__menu-icon" src="assets/cpu.png" alt="">CPU
-                        </a>
-                    </li>
-                    <li class="navbar__menu-list-item">
-                        <a href="#mother" class="navbar__menu-link">
-                            <img class="navbar__menu-icon" src="assets/motherboard.png" alt="">Motherboard
-                        </a>
-                    </li>
-                    <li class="navbar__menu-list-item">
-                        <a href="#placasdevideo" class="navbar__menu-link">
-                            <img class="navbar__menu-icon" src="assets/graphic-card.png" alt="">Placas de Video
-                        </a>
-                    </li>
-                    <li class="navbar__menu-list-item">
-                        <a href="#rams" class="navbar__menu-link">
-                            <img class="navbar__menu-icon" src="assets/ram.png" alt="">Memoria Ram
-                        </a>
-                    </li>
-                    <li class="navbar__menu-list-item">
-                        <a href="#gabinetes" class="navbar__menu-link">
-                                <img class="navbar__menu-icon" src="assets/computer-case.png" alt="">Gabinetes
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <img class="navbar__logo" src="assets/logo.png" alt="logo">
+        <nav>
+            <ul class="nav__links">
+                <li class="nav__item"><a class="nav__item" href="#proces">Procesadores</a></li>
+                <li class="nav__item"><a class="nav__item" href="#mother">Motherboards</a></li>
+                <li class="nav__item"><a class="nav__item" href="#placasdevideo">Placas de video</a></li>
+                <li class="nav__item"><a class="nav__item" href="#rams">Rams</a></li>
+                <li class="nav__item"><a class="nav__item" href="#gabinetes">Gabinetes</a></li>
+            </ul>
+        </nav>
+        <a class="nav__item" class="cta" href="#carrito">
+            <p class="nav__btn" class="nav__item__btn">Mi Carrito
+                <img class="nav__btn__img"  src="assets/shopping-cart.png" alt="cart"></img>
+            </p>
+        </a>
     </section>
-    <section id="proces" class="card-section">
+    <section id="proces" class="card-section-first">
         <h2>Procesadores</h2>
     </section>
     <section id="mother" class="card-section">

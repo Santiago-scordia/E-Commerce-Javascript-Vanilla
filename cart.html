@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>PC COMPONENTES</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <section class="navbar-section">
+        <a href="Index.html">
+            <img class="navbar__logo" src="assets/logo.png" alt="logo">
+        </a>
+        <nav>
+            <ul class="nav__links">
+                <li class="nav__item"><a class="nav__item" href="Index.html">Procesadores</a></li>
+                <li class="nav__item"><a class="nav__item" href="Index.html">Motherboards</a></li>
+                <li class="nav__item"><a class="nav__item" href="Index.html">Placas de video</a></li>
+                <li class="nav__item"><a class="nav__item" href="Index.html">Rams</a></li>
+                <li class="nav__item"><a class="nav__item" href="Index.html">Gabinetes</a></li>
+            </ul>
+        </nav>
+        <a class="nav__item__card" class="cta" href="#carrito">
+            <p class="nav__btn" class="nav__item__btn">Mi Carrito
+                <img class="nav__btn__img"  src="assets/shopping-cart.png" alt="cart"></img>
+        </a>
+    </section>
+
+    <section class="carrito-section">
+        <div class="card-carrito-items">
+            <h3 class="title-carrito-items">Carrito: </h3>
+            <p class="name-items"></p>   
+        </div>
+        <div class="card-carrito">
+            <h3 class="title-carrito-total">Total: </h3>
+            <p class="name-total"></p> 
+        </div>  
+        <img onclick="vaciarCarrito()" class= "carrito-img" src="assets/bin.png" alt="">
+    </section>
+    
+    <script src="js/index.js"></script>
+</body>
+</html>

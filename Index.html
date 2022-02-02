@@ -10,7 +10,9 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <section class="navbar-section">
-        <img class="navbar__logo" src="assets/logo.png" alt="logo">
+        <a href="Index.html">
+            <img class="navbar__logo" src="assets/logo.png" alt="logo">
+        </a>
         <nav>
             <ul class="nav__links">
                 <li class="nav__item"><a class="nav__item" href="#proces">Procesadores</a></li>
@@ -20,7 +22,7 @@
                 <li class="nav__item"><a class="nav__item" href="#gabinetes">Gabinetes</a></li>
             </ul>
         </nav>
-        <a class="nav__item" class="cta" href="#carrito">
+        <a class="nav__item__card" class="cta" href="cart.html">
             <p class="nav__btn" class="nav__item__btn">Mi Carrito
                 <img class="nav__btn__img"  src="assets/shopping-cart.png" alt="cart"></img>
         </a>
@@ -46,17 +48,6 @@
     -->
     <section id="gabinetes" class="card-section">
         <h2>Gabinetes</h2>
-    </section>
-    <section class="carrito-section">
-        <div class="card-carrito-items">
-            <h3 class="title-carrito-items">Carrito: </h3>
-            <p class="name-items"></p>   
-        </div>
-        <div class="card-carrito">
-            <h3 class="title-carrito-total">Total: </h3>
-            <p class="name-total"></p> 
-        </div>  
-        <img onclick="vaciarCarrito()" class= "carrito-img" src="assets/bin.png" alt="">
     </section>
     
     <script src="js/index.js"></script>

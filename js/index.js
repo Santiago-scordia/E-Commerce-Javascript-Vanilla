@@ -75,15 +75,15 @@ document.getElementsByClassName("name-items")[0].innerHTML = localStorage.getIte
 
 function actualizarCarrito(){
     localStorage.setItem("total-name", totalCarrito);
-    localStorage.setItem("total-modelos", modelos.join(" - "));
+    localStorage.setItem("total-modelos", modelos.join(" / "));
     document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
-    document.getElementsByClassName("name-items")[0].innerHTML = modelos.join(" - ");
+    document.getElementsByClassName("name-items")[0].innerHTML = modelos.join("  / ");
 }
     
 function sumarcarrito(num){
-    totalCarrito += listaProductos[num].precio;
-    modelos.push(listaProductos[num].modelo);
-    actualizarCarrito();
+    totalCarrito += listaProductos[num].precio;     
+    modelos.push(listaProductos[num].modelo); 
+    actualizarCarrito(num);
         return totalCarrito;
 }
 
@@ -91,7 +91,7 @@ function vaciarCarrito(){
     modelos = [];
     totalCarrito=0;
     localStorage.setItem("total-name", totalCarrito);
-    localStorage.setItem("total-modelos", modelos.join(" - "));
+    localStorage.setItem("total-modelos", modelos.join(" / "));
     actualizarCarrito();   
 }
 

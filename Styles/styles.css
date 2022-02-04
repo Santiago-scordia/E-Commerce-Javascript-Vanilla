@@ -194,8 +194,6 @@ body {
     flex-direction: row;
     box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
     background-color: white;
-    border-radius: 16px;
-
 }
 
 .title-carrito-items {
@@ -236,6 +234,53 @@ body {
 .carrito-img { 
     width: 40px;
     height: 40px;
-    margin-top: 25px;
-    margin-bottom: 200px;
+    margin-left: 20px;
+}
+
+.carrito-section-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #363434;
+    border-radius: 15px 15px 0 0;
+
+}
+
+.links__carrito {
+    list-style: none;
+    
+}
+
+.links__carrito li {
+    display: inline-block;
+    padding: 0px 130px;
+}
+
+.cart__item{
+   font-weight: 500;
+    font-size: 25px;
+    color: #edf0f1;
+    text-decoration: none;
+    margin-left: 20px; 
+}
+
+.cart-img{
+    width: auto;
+    height: 130px;
+    margin: 25px 0px 20px 180px;
+}
+
+.cart__price__item {
+    font-size: 25px;
+    margin-left: 265px;
+    margin-top: 70px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS'
+}
+
+.btn_cart{
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+
 }

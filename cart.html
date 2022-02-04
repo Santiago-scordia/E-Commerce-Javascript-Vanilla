@@ -27,17 +27,19 @@
                 <img class="nav__btn__img"  src="assets/shopping-cart.png" alt="cart"></img>
         </a>
     </section>
-
-    <section class="carrito-section">
+    <section id="cartcart" class="carrito-section">
+        <h2>Mi Carrito</h2>
+        <h2 class="name-total"></h2><img onclick="vaciarCarrito()" class= "carrito-img" src="assets/bin.png" alt="">
+            <div class="carrito-section-banner">
+                <ul class="links__carrito">
+                    <li class="cart__item">Producto</li>
+                    <li class="cart__item">Precio</li>
+                    <li class="cart__item">Cantidad</li>
+                    <li class="cart__item">Total</li>
+                </ul>
+            </div>
         <div class="card-carrito-items">
-            <h3 class="title-carrito-items">Carrito: </h3>
-            <p class="name-items"></p>   
         </div>
-        <div class="card-carrito">
-            <h3 class="title-carrito-total">Total: </h3>
-            <p class="name-total"></p> 
-        </div>  
-        <img onclick="vaciarCarrito()" class= "carrito-img" src="assets/bin.png" alt="">
     </section>
     
     <script src="js/index.js"></script>

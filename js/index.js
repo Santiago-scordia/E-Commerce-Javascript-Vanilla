@@ -62,39 +62,50 @@ for(const produ of listaProductos){
                             </div>`).find('div:last').addClass('card');     
 }
 
-if(localStorage.getItem("total-name") === null){
-    localStorage.setItem("total-name", 0);
+//Carrito ------------------------------------------------------------------------------------------------
+
+if(localStorage.getItem("total-storage") === null){
+    localStorage.setItem("total-storage", 0);
 }
 
-let totalCarrito = parseInt(localStorage.getItem("total-name"));
-let modelos = [];
-modelos.push(localStorage.getItem("total-modelos"));
 
-document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-name");
-document.getElementsByClassName("name-items")[0].innerHTML = localStorage.getItem("total-modelos");
+let totalCarrito = parseInt(localStorage.getItem("total-storage"));
+
+let modelos;
+if(localStorage.getItem('hijos') === null){
+    modelos = [];
+}
+else {
+    modelos=JSON.parse(localStorage.getItem('hijos'));
+}
+
+document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-storage");
+
+for(const child of modelos){
+    $(`#cartcart`).append( ` <div>
+                            <img src=${listaProductos[child].imagen} alt="cart" class="cart-img">
+                            <p class="cart__price__item">$${listaProductos[child].precio}</p>
+                            <p class="cart__price__item"><button class="btn_cart">-</button>1<button class="btn_cart">+</button></p>
+                            <p class="cart__price__item">$${listaProductos[child].precio}</p>
+                        </div>`).find('div:last').addClass('card-carrito-items');
+}
 
 function actualizarCarrito(){
     localStorage.setItem("total-name", totalCarrito);
-    localStorage.setItem("total-modelos", modelos.join(" / "));
     document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
-    document.getElementsByClassName("name-items")[0].innerHTML = modelos.join("  / ");
 }
-    
+
 function sumarcarrito(num){
     totalCarrito += listaProductos[num].precio;     
-    modelos.push(listaProductos[num].modelo); 
-    actualizarCarrito(num);
+    modelos.push(listaProductos[num].id); 
+    localStorage.setItem("total-storage", totalCarrito);
+    localStorage.setItem("hijos", JSON.stringify(modelos));
         return totalCarrito;
 }
 
 function vaciarCarrito(){
-    modelos = [];
     totalCarrito=0;
-    localStorage.setItem("total-name", totalCarrito);
-    localStorage.setItem("total-modelos", modelos.join(" / "));
+    localStorage.clear();
+    $( ".card-carrito-items" ).remove();
     actualizarCarrito();   
 }
-
-
-
-

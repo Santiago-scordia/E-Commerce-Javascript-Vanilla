@@ -1,10 +1,11 @@
 class producto{
-    constructor(modelo,precio,imagen,tipo,id){
+    constructor(modelo,precio,imagen,tipo,id,cantidad){
         this.modelo = modelo;
         this.precio = precio;
         this.imagen = imagen;
         this.tipo = tipo;
         this.id = id;
+        this.cantidad = cantidad;
     }
 }
 
@@ -49,11 +50,13 @@ listaProductos.sort(function (a, b){
     return (a.precio - b.precio)
 })
 
-let i = 0;
+
 
 //Se crean las cards con jquery
+let i = 0;
 for(const produ of listaProductos){
     produ.id = i++;
+    produ.cantidad = 1;
     $(`#${produ.tipo}`).append( ` <div>
                             <h3 class="card-title"> ${produ.modelo}</h3>
                             <img src=${produ.imagen} class="card-img" alt="pc">
@@ -81,12 +84,12 @@ else {
 
 document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-storage");
 
-for(const child of modelos){
+for(const produ of modelos){
     $(`#cartcart`).append( ` <div>
-                            <img src=${listaProductos[child].imagen} alt="cart" class="cart-img">
-                            <p class="cart__price__item">$${listaProductos[child].precio}</p>
-                            <p class="cart__price__item"><button class="btn_cart">-</button>1<button class="btn_cart">+</button></p>
-                            <p class="cart__price__item">$${listaProductos[child].precio}</p>
+                            <img src=${produ.imagen} alt="cart" class="cart-img">
+                            <p class="cart__price__item">$${produ.precio}</p>
+                            <p class="cart__price__item">${produ.cantidad}</p>
+                            <p class="cart__price__item">$${(produ.precio)*(produ.cantidad)}</p>
                         </div>`).find('div:last').addClass('card-carrito-items');
 }
 
@@ -95,17 +98,38 @@ function actualizarCarrito(){
     document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
 }
 
-function sumarcarrito(num){
-    totalCarrito += listaProductos[num].precio;     
-    modelos.push(listaProductos[num].id); 
-    localStorage.setItem("total-storage", totalCarrito);
-    localStorage.setItem("hijos", JSON.stringify(modelos));
+function sumarcarrito(num){ 
+    if(modelos.includes(listaProductos[num]) === false){
+        modelos.push(listaProductos[num]);
+        localStorage.setItem("hijos", JSON.stringify(modelos));
+        totalCarrito += listaProductos[num].precio;  
+        localStorage.setItem("total-storage", totalCarrito);
+    }  else if(modelos.includes(listaProductos[num]) === true) {
+        (modelos[0].cantidad)++;
+        localStorage.setItem("hijos", JSON.stringify(modelos));
+        totalCarrito += listaProductos[num].precio; 
+        localStorage.setItem("total-storage", totalCarrito);
+        console.log("Se sumo uno");
+    }
         return totalCarrito;
 }
 
 function vaciarCarrito(){
     totalCarrito=0;
     localStorage.clear();
-    $( ".card-carrito-items" ).remove();
+    $(".card-carrito-items").remove();
     actualizarCarrito();   
 }
+
+/*function traerProductos(){
+    $.getJSON(URLProductos, function (respuesta, estado){
+        if (estado === "success"){
+            let misDatos = respuesta;
+            for(const producto of misDatos){
+                listaProductos.push(producto);
+            }
+        }
+    ordenarListaProductos();
+    crearCards();
+    });
+}*/

@@ -53,6 +53,7 @@ listaProductos.sort(function (a, b){
 
 
 //Se crean las cards con jquery
+function renderProducts(){
 let i = 0;
 for(const produ of listaProductos){
     produ.id = i++;
@@ -63,9 +64,11 @@ for(const produ of listaProductos){
                             <p class="card-price"> $${produ.precio}</p>
                             <button onclick="sumarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>
                             </div>`).find('div:last').addClass('card');     
-}
+}}
 
-//Carrito ------------------------------------------------------------------------------------------------
+renderProducts();
+
+//Cart------------------------------------------------------------------------------------------------
 
 if(localStorage.getItem("total-storage") === null){
     localStorage.setItem("total-storage", 0);
@@ -84,6 +87,8 @@ else {
 
 document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-storage");
 
+
+
 for(const produ of modelos){
     $(`#cartcart`).append( ` <div>
                             <img src=${produ.imagen} alt="cart" class="cart-img">
@@ -98,6 +103,7 @@ function actualizarCarrito(){
     document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
 }
 
+
 function sumarcarrito(num){ 
     if(modelos.includes(listaProductos[num]) === false){
         modelos.push(listaProductos[num]);
@@ -111,6 +117,7 @@ function sumarcarrito(num){
         localStorage.setItem("total-storage", totalCarrito);
         console.log("Se sumo uno");
     }
+    
         return totalCarrito;
 }
 
@@ -120,6 +127,11 @@ function vaciarCarrito(){
     $(".card-carrito-items").remove();
     actualizarCarrito();   
 }
+
+
+
+
+
 
 /*function traerProductos(){
     $.getJSON(URLProductos, function (respuesta, estado){

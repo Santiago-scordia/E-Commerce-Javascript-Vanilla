@@ -6,195 +6,147 @@
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
+        "modelo": "Ryzen 5",
+        "precio":46000,
+        "imagen":"assets/ryzen5.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
+        "modelo": "Ryzen 7",
+        "precio":75000,
+        "imagen":"assets/ryzen7.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
+        "modelo": "Intel i5",
+        "precio":39500,
+        "imagen":"assets/inteli5.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
+        "modelo": "Intel i7",
+        "precio":67250,
+        "imagen":"assets/inteli7.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "AsRock A320M",
+        "precio":6800,
+        "imagen":"assets/asrocka320m.png",
+        "tipo":"mother"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Asus Prime Z590",
+        "precio":9500,
+        "imagen":"assets/asusprimez590.png",
+        "tipo":"mother"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Asus TUF F560",
+        "precio":17250,
+        "imagen":"assets/asustuf560.png",
+        "tipo":"mother"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "NZXT B550",
+        "precio":12600,
+        "imagen":"assets/b550.png",
+        "tipo":"mother"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Nvidia Rtx 3070",
+        "precio":85000,
+        "imagen":"assets/3070.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Nvidia Rtx 3090",
+        "precio":125600,
+        "imagen":"assets/3090.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Amd 6700Xt",
+        "precio":105850,
+        "imagen":"assets/6700xt.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Amd 6500Xt",
+        "precio":96200,
+        "imagen":"assets/6500xt.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Nvidia Rtx 3060",
+        "precio":79000,
+        "imagen":"assets/3060.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Amd 5600Xt",
+        "precio":68500,
+        "imagen":"assets/5600xt.png",
+        "tipo":"placasdevideo"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Corsair Pro 32Gb",
+        "precio":19000,
+        "imagen":"assets/vengancepro32gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Hyperx Fury 8Gb",
+        "precio":8000,
+        "imagen":"assets/hyperxfury8gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Crucial 4Gb",
+        "precio":3700,
+        "imagen":"assets/crucial4gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Xpg 8Gb",
+        "precio":6900,
+        "imagen":"assets/xpg8gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Corsair Vengance 8Gb",
+        "precio":9520,
+        "imagen":"assets/corsairvengance8gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Spetrix 16Gb",
+        "precio":10200,
+        "imagen":"assets/spetrix16gb.png",
+        "tipo":"rams"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Gigabyte C200",
+        "precio":9750,
+        "imagen":"assets/gigabytec200.png",
+        "tipo":"gabinetes"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Aorus 300G",
+        "precio":14500,
+        "imagen":"assets/aorus300g.png",
+        "tipo":"gabinetes"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Cooler Master Q300",
+        "precio":8060,
+        "imagen":"assets/coolermasterq300.png",
+        "tipo":"gabinetes"
     },
     {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
-    },
-    {
-        "modelo": "Ryzen 3",
-        "precio":23000,
-        "imagen":"assets/ryzen3.png",
-        "tipo":"proces"
+        "modelo": "Kolink Void",
+        "precio":4500,
+        "imagen":"assets/kolink.png",
+        "tipo":"gabinetes"
     }
 ]

@@ -46,7 +46,7 @@ body {
 }
 
 .nav__item__card{
-    font-weight: 300;
+    font-weight: 100;
     font-size: 25px;
     color: #edf0f1;
     text-decoration: none;
@@ -214,8 +214,9 @@ body {
 .name-total{
     display: inline-block;
     margin-left: 10px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 30px;
+    
 }
 
 .name-items{
@@ -237,7 +238,8 @@ body {
 .carrito-img { 
     width: 40px;
     height: 40px;
-    margin-left: 20px;
+    margin-left: 50px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -268,15 +270,16 @@ body {
 }
 
 .cart-img{
-    width: auto;
-    height: 130px;
-    margin: 25px 0px 20px 180px;
+    width: 107px;
+    height: auto;
+    margin: 25px 280px 20px 180px;
+    
 }
 
 .cart__price__item {
     font-size: 25px;
-    margin-left: 265px;
-    margin-top: 70px;
+    width: 22%;
+    margin-top: 40px;
     font-weight: bold;
     font-family: 'Trebuchet MS'
 }
@@ -287,18 +290,61 @@ body {
     font-size: 25px;
 }
 
+.section-total{
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 89%;
+}
+
 .total-price{
     display: inline-flex;
     align-items: center;
     width: 1690px;
     box-shadow: 0px 5px 20px 0px rgba(69, 67, 96, 0.1);
     background-color: white;
-    margin-left: 107px;
-    margin-bottom: 50px;
     border-radius: 0px 0px 15px 15px;
+    text-align: center;
 }
 
 .total{
     margin-left: 40%;
     font-size: 30px;
+    font-weight: 100;
+}
+
+.plus-img{
+   width: 20px;
+   margin-right: 10px;
+   margin-left: 10px;
+   filter: invert(100%);
+   cursor: pointer;
+}
+
+.buy-btn{
+    box-shadow: 0px 8px 6px -7px #000000;
+	background:linear-gradient(to bottom, #f78e06 5%, #d8260f 100%);
+	background-color:#df7016;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:600;
+	padding:8px 30px;
+	text-decoration:none;
+	text-shadow:1px 0px 2px #da7212;
+    margin-left: 70px;
+    margin-bottom: 0px;
+    margin-left: 15%;
+}
+
+.buy-btn:hover {
+	background:linear-gradient(to bottom, #d8260f 5%, #f78e06 100%);
+	background-color:#408c99;
+}
+.buy-btn:active {
+	position:relative;
+	top:5px;
 }

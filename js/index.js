@@ -1,100 +1,135 @@
-let listaProductos = [];
+let productsList = [];
 
-const URLProductos = "js/productos.json";
+const URLProducts = "js/productos.json";
 
-function ordenarProductos(){
-    listaProductos.sort(function (a, b){
+function sortProducts(){
+    productsList.sort(function (a, b){
         return (a.precio - b.precio)
     })}
 
 function renderProducts(){
     let i = 0;
-    for(const produ of listaProductos){
+    for(const produ of productsList){
         produ.id = i++;
         produ.cantidad = 1;
         $(`#${produ.tipo}`).append( ` <div>
                                 <h3 class="card-title"> ${produ.modelo}</h3>
                                 <img src=${produ.imagen} class="card-img" alt="pc">
                                 <p class="card-price"> $${produ.precio}</p>
-                                <button onclick="sumarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>
+                                <button onclick="agregarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>
                                 </div>`).find('div:last').addClass('card');     
     }}
-    
-function traerProductos(){
-    $.getJSON(URLProductos, function (respuesta, estado){
+
+
+function getProducts(){
+    $.getJSON(URLProducts, function (respuesta, estado){
         if (estado === "success"){
             let misDatos = respuesta;
             for(const producto of misDatos){
-                listaProductos.push(producto);
+                productsList.push(producto);
             }
         }
-    ordenarProductos();
+    sortProducts();
     renderProducts();
     });
 }
 
 $(document).ready(function(){
-    traerProductos();
+    getProducts();
 });
 
 
 //Cart------------------------------------------------------------------------------------------------
 
+let shoppingCart;
 
 if(localStorage.getItem("total-storage") === null){
     localStorage.setItem("total-storage", 0);
 }
 
 
-let totalCarrito = parseInt(localStorage.getItem("total-storage"));
+let cartTotal = parseInt(localStorage.getItem("total-storage"));
 
-let modelos;
-if(localStorage.getItem('hijos') === null){
-    modelos = [];
+if(localStorage.getItem('cart-storage') === null){
+    shoppingCart = [];
+    $(".buy-btn").remove();
 }
 else {
-    modelos=JSON.parse(localStorage.getItem('hijos'));
+    shoppingCart=JSON.parse(localStorage.getItem('cart-storage'));
 }
 
 document.getElementsByClassName("name-total")[0].innerHTML = "$"+localStorage.getItem("total-storage");
 
-for(const produ of modelos){
-    if(produ != null){
+function renderCarrito(){
+for(const product of shoppingCart){
+    if(product != null){
     $(`#cartcart`).append( ` <div>
-                            <img src=${produ.imagen} alt="cart" class="cart-img">
-                            <p class="cart__price__item">$${produ.precio}</p>
-                            <p class="cart__price__item">${produ.cantidad}</p>
-                            <p class="cart__price__item">$${(produ.precio)*(produ.cantidad)}</p>
+                            <img src=${product.imagen} alt="cart" class="cart-img">
+                            <p class="cart__price__item">$${product.precio}</p>
+                            <p class="cart__price__item"><img onclick="restarcarrito(${product.id})" src="assets/minus.png"" alt="plus" class="plus-img">${product.cantidad}<img onclick="sumarcarrito(${product.id})" src="assets/plus.png"" alt="plus" class="plus-img"></p>
+                            <p class="cart__price__item">$${(product.precio)*(product.cantidad)}</p>
                         </div>`).find('div:last').addClass('card-carrito-items');
+}}}
+
+renderCarrito();
+
+function restarcarrito(num){
+    if(shoppingCart[num].cantidad === 1){
+        cartTotal -= shoppingCart[num].precio; 
+        shoppingCart[num] = null;
+        localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
+        localStorage.setItem("total-storage", cartTotal);
+        $(".card-carrito-items").remove();
+        actualizarCarrito();
+        renderCarrito();
+    }
+    else{
+    shoppingCart[num].cantidad--;
+    cartTotal -= shoppingCart[num].precio; 
+    localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
+    localStorage.setItem("total-storage", cartTotal);
+    $(".card-carrito-items").remove();
+    actualizarCarrito();
+    renderCarrito();
 }}
 
+function sumarcarrito(num){
+    shoppingCart[num].cantidad++;
+    cartTotal += shoppingCart[num].precio; 
+    localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
+    localStorage.setItem("total-storage", cartTotal);
+    $(".card-carrito-items").remove();
+    actualizarCarrito();
+    renderCarrito();
+}
+
 function actualizarCarrito(){
-    localStorage.setItem("total-name", totalCarrito);
-    document.getElementsByClassName("name-total")[0].innerHTML = "$"+totalCarrito;
+    localStorage.setItem("total-name", cartTotal);
+    document.getElementsByClassName("name-total")[0].innerHTML = "$"+cartTotal;
 }
 
 
-function sumarcarrito(num){ 
-    if(!modelos.includes(listaProductos[num])){
-        modelos[num] = listaProductos[num];
-        localStorage.setItem("hijos", JSON.stringify(modelos));
-        totalCarrito += listaProductos[num].precio;  
-        localStorage.setItem("total-storage", totalCarrito);
-    }  else if(modelos.includes(listaProductos[num])) {
-        (modelos[num].cantidad)++;
-        localStorage.setItem("hijos", JSON.stringify(modelos));
-        totalCarrito += listaProductos[num].precio; 
-        localStorage.setItem("total-storage", totalCarrito);
-        console.log("Se sumo uno");
+function agregarcarrito(num){ 
+    if(!shoppingCart.includes(productsList[num])){
+        shoppingCart[num] = productsList[num];
+        localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
+        cartTotal += productsList[num].precio;  
+        localStorage.setItem("total-storage", cartTotal);
+    }  else if(shoppingCart.includes(productsList[num])) {
+        (shoppingCart[num].cantidad)++;
+        localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
+        cartTotal += productsList[num].precio; 
+        localStorage.setItem("total-storage", cartTotal);
+        console.log("Se agrego un elemento");
     }
-    
-        return totalCarrito;
+        return cartTotal;
 }
 
 function vaciarCarrito(){
-    totalCarrito=0;
+    cartTotal=0;
     localStorage.clear();
     $(".card-carrito-items").remove();
+    $(".buy-btn").remove();
     actualizarCarrito();   
 }
 

@@ -14,10 +14,10 @@ function renderProducts(){
         produ.cantidad = 0;
         $(`#${produ.tipo}`).append( ` <div>
                                 <h3 class="card-title"> ${produ.modelo}</h3>
-                                <img src=${produ.imagen} class="card-img" alt="pc">
+                                <img src=${produ.imagen} class="card-img"  alt="pc">
                                 <p class="card-price"> $${produ.precio}</p>
                                 <button onclick="agregarcarrito(${produ.id})"  class="card-button" >Añadir al carrito</button>
-                                </div>`).find('div:last').addClass('card').css("display","none").fadeIn(1000);     
+                                </div>`).find('div:last').addClass('card');     
     }}
 
 
@@ -37,6 +37,7 @@ function getProducts(){
 $(document).ready(function(){
     getProducts();
 });
+
 
 
 

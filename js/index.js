@@ -40,9 +40,6 @@ $(document).ready(function(){
 
 
 
-
-
-
 //Cart------------------------------------------------------------------------------------------------
 
 let shoppingCart;
@@ -118,17 +115,28 @@ function actualizarCarrito(){
 }
 
 
+function calcularTotal(){
+    let total = 0
+    for(const prod of shoppingCart){
+        if(prod != null){
+            total = total + ((prod.cantidad) * (prod.precio))
+        }
+    }
+    return total;
+}
+
+
 function agregarcarrito(num){ 
     if(!shoppingCart.includes(productsList[num])){
         shoppingCart[num] = productsList[num];
         shoppingCart[num].cantidad++;
         localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
-        cartTotal += productsList[num].precio;  
+        cartTotal = calcularTotal();
         localStorage.setItem("total-storage", cartTotal);
     }  else if(shoppingCart.includes(productsList[num])) {
         shoppingCart[num].cantidad++;
         localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
-        cartTotal += productsList[num].precio; 
+        cartTotal = calcularTotal();
         localStorage.setItem("total-storage", cartTotal);
         console.log("Se agrego un elemento");
     }

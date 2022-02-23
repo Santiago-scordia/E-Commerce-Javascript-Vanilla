@@ -11,13 +11,13 @@ function renderProducts(){
     let i = 0;
     for(const produ of productsList){
         produ.id = i++;
-        produ.cantidad = 1;
+        produ.cantidad = 0;
         $(`#${produ.tipo}`).append( ` <div>
                                 <h3 class="card-title"> ${produ.modelo}</h3>
                                 <img src=${produ.imagen} class="card-img" alt="pc">
                                 <p class="card-price"> $${produ.precio}</p>
-                                <button onclick="agregarcarrito(${produ.id})" class="card-button" >Añadir al carrito</button>
-                                </div>`).find('div:last').addClass('card');     
+                                <button onclick="agregarcarrito(${produ.id})"  class="card-button" >Añadir al carrito</button>
+                                </div>`).find('div:last').addClass('card').css("display","none").fadeIn(1000);     
     }}
 
 
@@ -39,20 +39,27 @@ $(document).ready(function(){
 });
 
 
+
+
+
 //Cart------------------------------------------------------------------------------------------------
 
 let shoppingCart;
+
+const popupbtn = document.querySelector('.popupbtn');
+const popup = document.querySelector('.popup-wrapper');
+const close = document.querySelector('.popup-close');
+
 
 if(localStorage.getItem("total-storage") === null){
     localStorage.setItem("total-storage", 0);
 }
 
-
 let cartTotal = parseInt(localStorage.getItem("total-storage"));
 
 if(localStorage.getItem('cart-storage') === null){
     shoppingCart = [];
-    $(".buy-btn").remove();
+    $(".buybtn").remove();
 }
 else {
     shoppingCart=JSON.parse(localStorage.getItem('cart-storage'));
@@ -89,6 +96,7 @@ function restarcarrito(num){
     localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
     localStorage.setItem("total-storage", cartTotal);
     $(".card-carrito-items").remove();
+    
     actualizarCarrito();
     renderCarrito();
 }}
@@ -112,11 +120,12 @@ function actualizarCarrito(){
 function agregarcarrito(num){ 
     if(!shoppingCart.includes(productsList[num])){
         shoppingCart[num] = productsList[num];
+        shoppingCart[num].cantidad++;
         localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
         cartTotal += productsList[num].precio;  
         localStorage.setItem("total-storage", cartTotal);
     }  else if(shoppingCart.includes(productsList[num])) {
-        (shoppingCart[num].cantidad)++;
+        shoppingCart[num].cantidad++;
         localStorage.setItem("cart-storage", JSON.stringify(shoppingCart));
         cartTotal += productsList[num].precio; 
         localStorage.setItem("total-storage", cartTotal);
@@ -129,7 +138,10 @@ function vaciarCarrito(){
     cartTotal=0;
     localStorage.clear();
     $(".card-carrito-items").remove();
-    $(".buy-btn").remove();
+    $(".buybtn").remove();
     actualizarCarrito();   
 }
+
+
+ 
 

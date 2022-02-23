@@ -116,7 +116,7 @@ body {
 
 .card {
     display: inline-block;
-    box-shadow: 0px 10px 10px 0px rgba(243, 121, 7, 0.1);
+    box-shadow: 15px 0px 15px 0px rgba(27, 14, 1, 0.1);
     background-color: white;
     border-radius: 16px;
     margin: 12px;
@@ -321,7 +321,7 @@ body {
    cursor: pointer;
 }
 
-.buy-btn{
+.buybtn{
     box-shadow: 0px 8px 6px -7px #000000;
 	background:linear-gradient(to bottom, #f78e06 5%, #d8260f 100%);
 	background-color:#df7016;
@@ -340,11 +340,73 @@ body {
     margin-left: 15%;
 }
 
-.buy-btn:hover {
+.buybtn:hover {
 	background:linear-gradient(to bottom, #d8260f 5%, #f78e06 100%);
 	background-color:#408c99;
 }
-.buy-btn:active {
+.buybtn:active {
 	position:relative;
 	top:5px;
+}
+
+.popupbtn {
+    display: block;
+    margin: 20px auto;
+    background: salmon;
+    color: white;
+    border: 0;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+ 
+.popupbtn:hover {
+    background: palevioletred;
+    transition: all 0.2s;
+}
+ 
+.popup-wrapper {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+ 
+.popup {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+    border-radius:20px;
+}
+ 
+.popup a {
+    background:linear-gradient(to bottom, #f78e06 5%, #d8260f 100%);
+    border-radius:9px;
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    margin: 30px auto;
+    display: block;
+    width: 50%;
+}
+ 
+.popup a:hover {
+    background:linear-gradient(to bottom, #d8260f 5%, #f78e06 100%);
+    transition: all 0.2s;
+}
+ 
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
 }

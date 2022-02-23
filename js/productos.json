@@ -1,30 +1,30 @@
 [
     {
-        "modelo": "Ryzen 3",
+        "modelo": "Ryzen 3 3600",
         "precio":23000,
         "imagen":"assets/ryzen3.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 5",
+        "modelo": "Ryzen 5 5600x",
         "precio":46000,
         "imagen":"assets/ryzen5.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Ryzen 7",
+        "modelo": "Ryzen 7 5700g",
         "precio":75000,
         "imagen":"assets/ryzen7.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Intel i5",
+        "modelo": "Intel i5-11400",
         "precio":39500,
         "imagen":"assets/inteli5.png",
         "tipo":"proces"
     },
     {
-        "modelo": "Intel i7",
+        "modelo": "Intel i7-10700f",
         "precio":67250,
         "imagen":"assets/inteli7.png",
         "tipo":"proces"
@@ -148,5 +148,53 @@
         "precio":4500,
         "imagen":"assets/kolink.png",
         "tipo":"gabinetes"
+    },
+    {
+        "modelo": "Kingston M2 240GB",
+        "precio":4350,
+        "imagen":"assets/kingston240.png",
+        "tipo":"discos"
+    },
+    {
+        "modelo": "Crucial Solido 580GB",
+        "precio":8400,
+        "imagen":"assets/crucial580gb.png",
+        "tipo":"discos"
+    },
+    {
+        "modelo": "Samsung Solido 580GB",
+        "precio":8240,
+        "imagen":"assets/samsung580gb.png",
+        "tipo":"discos"
+    },
+    {
+        "modelo": "Samsung M2 1TB",
+        "precio":12450,
+        "imagen":"assets/samsung1tb.png",
+        "tipo":"discos"
+    },
+    {
+        "modelo": "Seagate Rigido 1TB",
+        "precio":5870,
+        "imagen":"assets/seagate1tb.png",
+        "tipo":"discos"
+    },
+    {
+        "modelo": "Corsair CV550",
+        "precio":5500,
+        "imagen":"assets/corsaircv.png",
+        "tipo":"fuentes"
+    },
+    {
+        "modelo": "Seasonic Focus 800",
+        "precio":11320,
+        "imagen":"assets/seasonic800.png",
+        "tipo":"fuentes"
+    },
+    {
+        "modelo": "Gigabyte P450B",
+        "precio":4400,
+        "imagen":"assets/gigabytep550b.png",
+        "tipo":"fuentes"
     }
 ]
